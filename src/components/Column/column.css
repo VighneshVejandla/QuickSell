@@ -1,0 +1,82 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.column:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.column .column-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.column .column-header-left-container,
+.column .column-header-right-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.column .column-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.column .column-title .count {
+    margin-left: 0.5rem;
+    color: #6b6f76;
+    font-weight: normal;
+}
+
+.column .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px); /* Adjust based on your layout */
+    padding-right: 0.5rem;
+}
+
+.column .cards-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.column .cards-container::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 700px) {
+    .column {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .column .cards-container {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: none;
+        padding-bottom: 0.5rem;
+    }
+    
+    .column .cards-container::-webkit-scrollbar {
+        height: 6px;
+    }
+}
